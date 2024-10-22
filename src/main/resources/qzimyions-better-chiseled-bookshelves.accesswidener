@@ -1,0 +1,3 @@
+accessWidener v2 named
+
+accessible method net/minecraft/block/ChiseledBookshelfBlock getSlotForHitPos (Lnet/minecraft/util/hit/BlockHitResult;Lnet/minecraft/block/BlockState;)Ljava/util/OptionalInt;
