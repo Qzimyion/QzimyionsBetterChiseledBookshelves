@@ -1,5 +1,6 @@
 package com.qzimyion.mixin;
 
+import com.qzimyion.QzimyionsBetterChiseledBookshelves;
 import com.qzimyion.client.QBCBBlockEntityRenderer;
 import net.minecraft.client.render.model.BakedModelManager;
 import net.minecraft.util.Identifier;
@@ -20,6 +21,6 @@ public class BakedModelMixin {
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void appendToAtlases(CallbackInfo ci) {
         LAYERS_TO_LOADERS = new HashMap<>(LAYERS_TO_LOADERS);
-        LAYERS_TO_LOADERS.put(QBCBBlockEntityRenderer.ATLAS_ID, QBCBBlockEntityRenderer.id("scroll_shelf"));
+        LAYERS_TO_LOADERS.put(QBCBBlockEntityRenderer.ATLAS_ID, QzimyionsBetterChiseledBookshelves.id("chiseled_bookshelves"));
     }
 }
