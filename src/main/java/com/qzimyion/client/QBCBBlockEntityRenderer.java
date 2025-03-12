@@ -20,8 +20,8 @@ import net.minecraft.util.math.RotationAxis;
 import java.util.Objects;
 
 public class QBCBBlockEntityRenderer implements BlockEntityRenderer<ChiseledBookshelfBlockEntity> {
-    public static final EntityModelLayer MODEL_LAYER = new EntityModelLayer(QzimyionsBetterChiseledBookshelves.id("chiseled_bookshelf"), "chiseled_bookshelf");
-    public static final Identifier ATLAS_ID = QzimyionsBetterChiseledBookshelves.id("textures/atlas/chiseled_bookshelf.png");
+    public static final EntityModelLayer MODEL_LAYER = new EntityModelLayer(Identifier.of("chiseled_bookshelf"), "chiseled_bookshelf");
+    public static final Identifier ATLAS_ID = Identifier.of(QzimyionsBetterChiseledBookshelves.MOD_ID,"textures/atlas/chiseled_bookshelf.png");
     private final ModelPart[] bookModels = new ModelPart[6];
 
     public static TexturedModelData getTexturedModelData(){
@@ -30,7 +30,7 @@ public class QBCBBlockEntityRenderer implements BlockEntityRenderer<ChiseledBook
         for (int i = 0; i < 6; i++) {
             float x = (i % 3) * 5.3f + 1.5f;
             float y = ((float) i / 3) * 6f + 2f;
-            modelPartData.addChild("book_" + i, ModelPartBuilder.create().uv(0, 0).cuboid(x, y, 15f, 4f, 5f, 1f), ModelTransform.NONE);
+            modelPartData.addChild("book_" + i, ModelPartBuilder.create().uv(0, 0).cuboid(x, y, 15f, 4f, 5f, 2f), ModelTransform.NONE);
         }
         return TexturedModelData.of(modelData, 16, 16);
     }
@@ -60,6 +60,7 @@ public class QBCBBlockEntityRenderer implements BlockEntityRenderer<ChiseledBook
                 var spriteId = new SpriteIdentifier(ATLAS_ID, textureId);
                 var vertexConsumer = spriteId.getVertexConsumer(vertexConsumers, RenderLayer::getEntityCutout);
                 bookModels[i].render(matrices, vertexConsumer, light, overlay);
+                QzimyionsBetterChiseledBookshelves.LOGGER.info("Rendering book");
             }
         }
         matrices.pop();

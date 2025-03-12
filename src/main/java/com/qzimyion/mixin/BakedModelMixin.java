@@ -21,6 +21,6 @@ public class BakedModelMixin {
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void appendToAtlases(CallbackInfo ci) {
         LAYERS_TO_LOADERS = new HashMap<>(LAYERS_TO_LOADERS);
-        LAYERS_TO_LOADERS.put(QBCBBlockEntityRenderer.ATLAS_ID, QzimyionsBetterChiseledBookshelves.id("chiseled_bookshelves"));
+        LAYERS_TO_LOADERS.put(QBCBBlockEntityRenderer.ATLAS_ID, Identifier.of(QzimyionsBetterChiseledBookshelves.MOD_ID ,"chiseled_bookshelf"));
     }
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraft:block/chiseled_bookshelf",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraft:block/chiseled_bookshelf"
+    },
+    "facing=south": {
+      "model": "minecraft:block/chiseled_bookshelf",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraft:block/chiseled_bookshelf",
+      "y": 270
+    }
+  }
+}

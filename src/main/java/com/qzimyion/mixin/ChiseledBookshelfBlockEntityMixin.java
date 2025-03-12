@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(ChiseledBookshelfBlockEntity.class)
 public class ChiseledBookshelfBlockEntityMixin extends BlockEntity {
 
-
     public ChiseledBookshelfBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
